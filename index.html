@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>E-commerce Product Page</title>
+  </head>
+  <body>
+    <!-- Main content wrapper -->
+    <main class="main-content">
+      <!-- Header with navigation -->
+      <header class="header">
+        <!-- Menu toggle button for accessibility -->
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <img src="images/icon-menu.svg" alt="Menu icon" />
+        </button>
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+          <figure class="logo-container">
+            <img src="images/logo.svg" alt="E-commerce Logo" class="logo" />
+          </figure>
+          <!-- Navigation links -->
+          <div class="nav-links" role="menu">
+            <button class="close-nav" aria-label="Close navigation menu">
+              <img src="images/icon-close.svg" alt="Close menu icon" />
+            </button>
+            <a href="#" class="nav-link" role="menuitem">Collections</a>
+            <a href="#" class="nav-link" role="menuitem">Men</a>
+            <a href="#" class="nav-link" role="menuitem">Women</a>
+            <a href="#" class="nav-link" role="menuitem">About</a>
+            <a href="#" class="nav-link" role="menuitem">Contact</a>
+          </div>
+          <!-- Cart icon with item count -->
+          <div class="cart-icon" aria-label="Shopping cart">
+            <img src="images/icon-cart.svg" alt="Cart icon" />
+            <span class="item-count" aria-live="polite">0</span>
+          </div>
+
+          <!-- Cart modal -->
+          <div
+            class="cart-modal"
+            role="dialog"
+            aria-labelledby="cart-title"
+            aria-hidden="true"
+            
+          >
+            <h4 id="cart-title">Cart</h4>
+            <hr />
+            <p class="empty-cart-message" hidden>Your cart is empty.</p>
+
+            <div class="cart-items" role="list" >
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                alt="Product thumbnail"
+                class="cart-item-thumbnail"
+              />
+              <div class="cart-item-details">
+                <p class="cart-item-name">Fall Limited Edition Sneakers</p>
+                <p class="cart-item-price">$<span>125.00</span></p>
+                <p class="cart-item-quantity">x<span>0</span></p>
+                <p class="cart-item-total">$0.00</p>
+                <button class="close-cart" aria-label="Close cart modal">
+                  <img src="images/icon-delete.svg" alt="Close cart icon" />
+                </button>
+              </div>
+              <div class="cart-actions">
+                <button
+                  class="checkout-button"
+                  aria-label="Proceed to checkout"
+                >
+                  Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- User profile icon -->
+          <div class="user-icon" aria-label="User profile">
+            <img src="images/image-avatar.png" alt="User profile icon" />
+          </div>
+        </nav>
+      </header>
+      <hr />
+
+       <!-- Overlay with confirmation message -->
+      <div class="overlay" id="confirmationOverlay">
+        <section class="confirmation-message" role="dialog" aria-labelledby="thank-you" aria-modal="true">
+          <button class="close-btn" aria-label="Close confirmation">
+            <img src="images/icon-close.svg" alt="Close icon">
+          </button>
+          <img src="images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition Sneakers">
+          <h1 id="thank-you">Thank You!</h1>
+          <p>Your in-store pickup is confirmed.</p>
+        </section>
+      </div>
+
+      <div class="images-overlay">
+        <img src="images/icon-close.svg" alt="">
+      </div>
+
+      <!-- Main product section -->
+      <section class="product-section " aria-labelledby="product-title">
+        <!-- Product images -->
+        <div class="product-images">
+          <img
+            src="images/image-product-1.jpg"
+            alt="Product image 1"
+            class="main-image"
+          />
+          <div
+            class="thumbnail-images"
+            role="group"
+            aria-label="Product thumbnails"
+          >
+            <img
+              src="images/image-product-1-thumbnail.jpg"
+              alt="Thumbnail image 1"
+              class="thumbnail active"
+            />
+            <img
+              src="images/image-product-2-thumbnail.jpg"
+              alt="Thumbnail image 2"
+              class="thumbnail"
+            />
+            <img
+              src="images/image-product-3-thumbnail.jpg"
+              alt="Thumbnail image 3"
+              class="thumbnail"
+            />
+            <img
+              src="images/image-product-4-thumbnail.jpg"
+              alt="Thumbnail image 4"
+              class="thumbnail"
+            />
+          </div>
+        </div>
+
+        <!-- Product details -->
+        <div class="product-details">
+          <p id="company-title" class="company-title">Sneaker Company</p>
+          <h1 id="product-title" class="product-title">Fall Limited Edition Sneakers</h1>
+          <p class="product-description">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+          <p class="product-price">
+            <span class="price">$125.00</span>
+            <span class="discount" aria-label="50 percent discount">50%</span>
+          </p>
+          <p class="original-price" aria-label="Original price $250">$250.00</p>
+          <!-- quantity selector & add to cart -->
+          <div class="quantity-cart" id="quantity-cart"> 
+              <!-- Quantity selector -->
+            <div class="quantity-selector" aria-label="Quantity selector">
+              <button class="decrease-quantity" aria-label="Decrease quantity">
+                <img src="images/icon-minus.svg" alt="Decrease quantity" />
+              </button>
+              <input
+                type="number"
+                value="0"
+                min="0"
+                class="quantity-input"
+                aria-label="Quantity input"
+              />
+              <button class="increase-quantity" aria-label="Increase quantity">
+                <img src="images/icon-plus.svg" alt="Increase quantity" />
+              </button>
+            </div>
+            <!-- Add to cart button -->
+            <button class="add-to-cart" aria-label="Add to cart">
+              <img src="images/icon-cart.svg" alt="">
+              <span>Add to cart</span>
+            </button>
+          </div>
+          
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
